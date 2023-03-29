@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'user',
     'pages',
+    'books',
 
     'crispy_forms',
     'allauth',
@@ -113,7 +114,6 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -123,6 +123,8 @@ STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
 
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 # STATIC_ROOT = (BASE_DIR / 'staticfiles')
 
 # Default primary key field type
@@ -173,10 +175,12 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 
 # Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'TestEmailSendingDjango@yandex.ru'
 EMAIL_HOST_PASSWORD = 'Fullstack135799'
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+

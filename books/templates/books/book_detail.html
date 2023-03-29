@@ -1,0 +1,17 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+    <h2>{{ object.title }}</h2>
+    <h5>{{ object.author }}</h5>
+    {% if object.cover %}
+    <img src="{{ object.cover.url }}" alt="" height="150px">
+    {% endif %}
+    <div>
+        <h3>Reviews</h3>
+        <ul>
+            {% for review in object.reviews.all %}
+                <li>{{ review.review }} ({{ review.author }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

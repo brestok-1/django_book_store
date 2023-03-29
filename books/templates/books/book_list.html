@@ -1,0 +1,8 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+    {% for object in object_list %}
+        <div class="">
+            <h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
+        </div>
+    {% endfor %}
+{% endblock %}
