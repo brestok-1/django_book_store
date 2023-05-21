@@ -17,6 +17,14 @@ class Books(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(upload_to='covers/', blank=True)
 
+    class Meta:
+        indexes = (
+            models.Index(fields=['id'], name='id_index'),
+        )
+        permissions = (
+            ('special_status', 'Can read all books'),
+        )
+
     def __str__(self):
         return self.title
 

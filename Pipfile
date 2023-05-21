@@ -10,6 +10,8 @@ django-crispy-forms = "*"
 django-allauth = "*"
 django-environ = "*"
 pillow = "*"
+django-debug-toolbar = "*"
+environs = {extras = ["django"], version = "*"}
 
 [dev-packages]
 
